@@ -1,0 +1,102 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/mackbookpankaj/Projects/AutomationFrameworkWithFluent/AutomationFrameworkWithFluent/AutomationFrameworkWithFluent.csproj": {}
+  },
+  "projects": {
+    "/Users/mackbookpankaj/Projects/AutomationFrameworkWithFluent/AutomationFrameworkWithFluent/AutomationFrameworkWithFluent.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/mackbookpankaj/Projects/AutomationFrameworkWithFluent/AutomationFrameworkWithFluent/AutomationFrameworkWithFluent.csproj",
+        "projectName": "AutomationFrameworkWithFluent",
+        "projectPath": "/Users/mackbookpankaj/Projects/AutomationFrameworkWithFluent/AutomationFrameworkWithFluent/AutomationFrameworkWithFluent.csproj",
+        "packagesPath": "/Users/mackbookpankaj/.nuget/packages/",
+        "outputPath": "/Users/mackbookpankaj/Projects/AutomationFrameworkWithFluent/AutomationFrameworkWithFluent/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/mackbookpankaj/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "/Users/mackbookpankaj/Projects/SetUpEnvironment/packages": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "DotNetSeleniumExtras.WaitHelpers": {
+              "target": "Package",
+              "version": "[3.11.0, )"
+            },
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[6.7.0, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.5.0, )"
+            },
+            "Selenium.WebDriver": {
+              "target": "Package",
+              "version": "[4.4.0, )"
+            },
+            "Selenium.WebDriver.ChromeDriver": {
+              "target": "Package",
+              "version": "[105.0.5195.5200, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            },
+            "xunit.categories": {
+              "target": "Package",
+              "version": "[2.0.2, )"
+            },
+            "xunit.runner.visualstudio": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.408/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

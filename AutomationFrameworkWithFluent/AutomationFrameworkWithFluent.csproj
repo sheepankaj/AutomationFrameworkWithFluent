@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+    <PackageReference Include="xunit" Version="2.4.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
+    <PackageReference Include="coverlet.collector" Version="1.2.0" />
+    <PackageReference Include="Selenium.WebDriver" Version="4.4.0" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="105.0.5195.5200" />
+    <PackageReference Include="FluentAssertions" Version="6.7.0" />
+    <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
+    <PackageReference Include="xunit.categories" Version="2.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Framework\" />
+    <None Remove="Framework\Common\" />
+    <None Remove="Framework\POM\" />
+    <None Remove="Framework\UI_Tests\" />
+    <None Remove="Selenium.WebDriver" />
+    <None Remove="Selenium.WebDriver.ChromeDriver" />
+    <None Remove="FluentAssertions" />
+    <None Remove="DotNetSeleniumExtras.WaitHelpers" />
+    <None Remove="xunit.categories" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Framework\" />
+    <Folder Include="Framework\Common\" />
+    <Folder Include="Framework\POM\" />
+    <Folder Include="Framework\UI_Tests\" />
+  </ItemGroup>
+</Project>
