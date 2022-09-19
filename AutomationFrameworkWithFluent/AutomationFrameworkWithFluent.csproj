@@ -16,6 +16,8 @@
     <PackageReference Include="FluentAssertions" Version="6.7.0" />
     <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
     <PackageReference Include="xunit.categories" Version="2.0.2" />
+    <PackageReference Include="DotNetSeleniumExtras.PageObjects.Core" Version="4.3.0" />
+    <PackageReference Include="Selenium.Support" Version="4.4.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,6 +30,8 @@
     <None Remove="FluentAssertions" />
     <None Remove="DotNetSeleniumExtras.WaitHelpers" />
     <None Remove="xunit.categories" />
+    <None Remove="DotNetSeleniumExtras.PageObjects.Core" />
+    <None Remove="Selenium.Support" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Framework\" />

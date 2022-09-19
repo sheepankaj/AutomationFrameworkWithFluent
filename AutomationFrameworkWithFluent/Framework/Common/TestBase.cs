@@ -359,5 +359,60 @@ namespace AutomationFrameworkWithFluent.Framework.Common
             }
         }
 
+        /// <summary>
+        /// Select an option from the dropdown list, can pass value or text
+        /// </summary>
+        /// <param name="selector"></param>
+        /// <param name="option"></param>
+
+        public void Select(By selector, string option)
+        {
+            RetryTimer(() =>
+            {
+                try
+                {
+                    Click(selector);
+
+                    try
+                    {
+                        WaitForElementTextToBeVisibleThenClickByText(selector, option);
+                    }
+                    catch (ElementNotVisibleException)
+                    {
+                        WaitForElementTextToBeVisibleThenClickByText(selector, option);
+                    }
+                    catch (StaleElementReferenceException)
+                    {
+                        WaitForElementTextToBeVisibleThenClickByText(selector, option);
+                    }
+                }
+                catch (NoSuchElementException)
+                {
+                    SelectElement element = new SelectElement(WaitForElementToBeVisible(selector));
+                    element.SelectByValue(option);
+                }
+                catch (TimeoutException)
+                {
+                    throw new Exception("Unable to find this value {" + option + "} in dropdwon - "+ selector);
+                }
+            });
+        }
+
+        /// <summary>
+        /// This is used to wait for element to be visible then check that the text is present in the element and then select option by Text
+        /// </summary>
+        /// <param name="selector"></param>
+        /// <param name="option"></param>
+        private void WaitForElementTextToBeVisibleThenClickByText(By selector, string option)
+        {
+            RetryTimer(() =>
+            {
+                SelectElement element = new SelectElement(WaitForElementToBeVisible(selector));
+                Wait().Until(ExpectedConditions.TextToBePresentInElementLocated(selector, option));
+
+                element.SelectByText(option);
+            });
+
+        }
     }
 }

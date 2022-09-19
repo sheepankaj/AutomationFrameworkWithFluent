@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/mackbookpankaj/Projects/AutomationFrameworkWithFluent/AutomationFrameworkWithFluent/AutomationFrameworkWithFluent.csproj": {}
+    "/Users/mackbookpankaj/Documents/GitHub/AutomationFrameworkWithFluent/AutomationFrameworkWithFluent/AutomationFrameworkWithFluent.csproj": {}
   },
   "projects": {
-    "/Users/mackbookpankaj/Projects/AutomationFrameworkWithFluent/AutomationFrameworkWithFluent/AutomationFrameworkWithFluent.csproj": {
+    "/Users/mackbookpankaj/Documents/GitHub/AutomationFrameworkWithFluent/AutomationFrameworkWithFluent/AutomationFrameworkWithFluent.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mackbookpankaj/Projects/AutomationFrameworkWithFluent/AutomationFrameworkWithFluent/AutomationFrameworkWithFluent.csproj",
+        "projectUniqueName": "/Users/mackbookpankaj/Documents/GitHub/AutomationFrameworkWithFluent/AutomationFrameworkWithFluent/AutomationFrameworkWithFluent.csproj",
         "projectName": "AutomationFrameworkWithFluent",
-        "projectPath": "/Users/mackbookpankaj/Projects/AutomationFrameworkWithFluent/AutomationFrameworkWithFluent/AutomationFrameworkWithFluent.csproj",
+        "projectPath": "/Users/mackbookpankaj/Documents/GitHub/AutomationFrameworkWithFluent/AutomationFrameworkWithFluent/AutomationFrameworkWithFluent.csproj",
         "packagesPath": "/Users/mackbookpankaj/.nuget/packages/",
-        "outputPath": "/Users/mackbookpankaj/Projects/AutomationFrameworkWithFluent/AutomationFrameworkWithFluent/obj/",
+        "outputPath": "/Users/mackbookpankaj/Documents/GitHub/AutomationFrameworkWithFluent/AutomationFrameworkWithFluent/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -42,6 +42,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "DotNetSeleniumExtras.PageObjects.Core": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
             "DotNetSeleniumExtras.WaitHelpers": {
               "target": "Package",
               "version": "[3.11.0, )"
@@ -53,6 +57,10 @@
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[16.5.0, )"
+            },
+            "Selenium.Support": {
+              "target": "Package",
+              "version": "[4.4.0, )"
             },
             "Selenium.WebDriver": {
               "target": "Package",
