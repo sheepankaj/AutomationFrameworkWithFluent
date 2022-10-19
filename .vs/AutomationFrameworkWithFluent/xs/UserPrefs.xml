@@ -1,8 +1,10 @@
 ﻿<Properties StartupConfiguration="{C9ADEE9E-E552-44B2-B3C5-B471F17EBD97}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="AutomationFrameworkWithFluent/Framework/Common/TestBase.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="AutomationFrameworkWithFluent/app.config">
     <Files>
-      <File FileName="AutomationFrameworkWithFluent/Framework/UI_Tests/HomePageTests.cs" Line="1" Column="1" />
-      <File FileName="AutomationFrameworkWithFluent/Framework/Common/TestBase.cs" Line="386" Column="100" />
+      <File FileName="AutomationFrameworkWithFluent/Framework/UI_Tests/HomePageTests.cs" Line="24" Column="15" />
+      <File FileName="AutomationFrameworkWithFluent/Framework/Common/TestBase.cs" Line="63" Column="57" />
+      <File FileName="AutomationFrameworkWithFluent/Framework/POM/HomePage.cs" Line="104" Column="1" />
+      <File FileName="AutomationFrameworkWithFluent/app.config" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,12 +15,11 @@
                 <Node name="PackageDependencies" expanded="True" />
               </Node>
               <Node name="Framework" expanded="True">
-                <Node name="Common" expanded="True">
-                  <Node name="TestBase.cs" selected="True" />
-                </Node>
+                <Node name="Common" expanded="True" />
                 <Node name="POM" expanded="True" />
                 <Node name="UI_Tests" expanded="True" />
               </Node>
+              <Node name="app.config" selected="True" />
             </Node>
           </Node>
         </State>

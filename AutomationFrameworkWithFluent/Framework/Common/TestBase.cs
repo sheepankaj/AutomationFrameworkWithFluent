@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Diagnostics;
+using System.IO;
 using System.Text.RegularExpressions;
 using FluentAssertions;
 using OpenQA.Selenium;
@@ -17,8 +19,16 @@ namespace AutomationFrameworkWithFluent.Framework.Common
     {
         #region Driver Setup
         private static readonly string config = ConfigurationManager.AppSettings.Get("selenium.browser.shutdown");
-        public IWebDriver driver;
+        public static string report = ConfigurationManager.AppSettings.Get("ReportFile.Location");
+        public static IWebDriver driver;
 
+
+        public TestBase AllureReportGenerator()
+        {
+            report = ConfigurationManager.AppSettings.Get("ReportFile.Location");
+            return this;
+                 
+        }
         /// <summary>
         /// Gets the Driver from Config file
         /// </summary>
@@ -29,6 +39,7 @@ namespace AutomationFrameworkWithFluent.Framework.Common
         }
         #endregion Driver Setup
 
+        #region Dispose test execution after test done
         /// <summary>
         /// Dispose the test after we are done
         /// </summary>
@@ -37,7 +48,10 @@ namespace AutomationFrameworkWithFluent.Framework.Common
             if (ShouldCloseBroswerAfterTest())
                 driver.Quit();
         }
+        #endregion
 
+
+        #region Browser SetUp
         /// <summary>
         /// Generate a browser driver for test
         /// </summary>
@@ -45,6 +59,7 @@ namespace AutomationFrameworkWithFluent.Framework.Common
         /// <returns></returns>
         private static IWebDriver CreateBrowserDriver(string browserDriver)
         {
+
             if (browserDriver == null)
                 return new ChromeDriver();
 
@@ -53,6 +68,9 @@ namespace AutomationFrameworkWithFluent.Framework.Common
                 case "chrome":
                     ChromeOptions chrome = new ChromeOptions();
                     chrome.AddArgument("--start-maximized");
+                    //chrome.AddArguments("start-fullscreen");
+                    //driver.Manage().Window.Maximize();
+
                     return new ChromeDriver(chrome);
 
                 case "headless":
@@ -73,6 +91,9 @@ namespace AutomationFrameworkWithFluent.Framework.Common
             }
         }
 
+        #endregion
+
+        #region Close browser after test execution 
         /// <summary>
         /// Close the browser after test
         /// </summary>
@@ -84,6 +105,9 @@ namespace AutomationFrameworkWithFluent.Framework.Common
             return true;
         }
 
+        #endregion
+
+        #region SetUp for headless browser
         /// <summary>
         /// Are we running in a mode we cant see, mainly for force close of browser.
         /// </summary>
@@ -93,6 +117,9 @@ namespace AutomationFrameworkWithFluent.Framework.Common
             return ConfigurationManager.AppSettings.Get("selenium.browser.driver") == "headless" || ConfigurationManager.AppSettings.Get("selenium.browser.driver") == "grid";
         }
 
+        #endregion
+
+        #region Go to URl and open it in the browser
         /// <summary>
         /// Open an browser in the browser
         /// </summary>
@@ -109,6 +136,10 @@ namespace AutomationFrameworkWithFluent.Framework.Common
             }
         }
 
+        #endregion
+
+
+        #region Useful Methods to do task in the browser like click, move, etc
         /// <summary>
         /// Used to Wait for element to be clickable then move to the element
         /// </summary>
@@ -414,5 +445,34 @@ namespace AutomationFrameworkWithFluent.Framework.Common
             });
 
         }
+
+        /// <summary>
+        /// Select values multileple times from drop down list. (Iterate through foreach)
+        /// </summary>
+        /// <param name="selector"></param>
+        /// <param name="sortByDropDownList"></param>
+        public void LoopSelectFromDropDownList(By selector, List<string> sortByDropDownList)
+        {
+            Click(selector);
+            SelectElement element = new SelectElement(WaitForElementToBeVisible(selector));
+
+            foreach(string options in sortByDropDownList)
+            {
+                try
+                {
+                    element.SelectByText(options);
+                }
+                catch(NoSuchElementException)
+                {
+                    element.SelectByValue(options);
+                }
+                catch(TimeoutException)
+                {
+                    throw new Exception("Unable to find option and click it");
+                }
+            }
+        }
+
+        #endregion
     }
 }

@@ -208,3 +208,8 @@
 /Users/mackbookpankaj/Documents/GitHub/AutomationFrameworkWithFluent/AutomationFrameworkWithFluent/obj/Debug/netcoreapp3.1/AutomationFrameworkWithFluent.dll
 /Users/mackbookpankaj/Documents/GitHub/AutomationFrameworkWithFluent/AutomationFrameworkWithFluent/obj/Debug/netcoreapp3.1/AutomationFrameworkWithFluent.pdb
 /Users/mackbookpankaj/Documents/GitHub/AutomationFrameworkWithFluent/AutomationFrameworkWithFluent/obj/Debug/netcoreapp3.1/AutomationFrameworkWithFluent.genruntimeconfig.cache
+/Users/mackbookpankaj/Documents/GitHub/AutomationFrameworkWithFluent/AutomationFrameworkWithFluent/bin/Debug/netcoreapp3.1/SeleniumExtras.PageObjects.dll
+/Users/mackbookpankaj/Documents/GitHub/AutomationFrameworkWithFluent/AutomationFrameworkWithFluent/bin/Debug/netcoreapp3.1/WebDriver.Support.dll
+/Users/mackbookpankaj/Documents/GitHub/AutomationFrameworkWithFluent/AutomationFrameworkWithFluent/bin/Debug/netcoreapp3.1/Allure.Commons.dll
+/Users/mackbookpankaj/Documents/GitHub/AutomationFrameworkWithFluent/AutomationFrameworkWithFluent/bin/Debug/netcoreapp3.1/Allure.XUnit.dll
+/Users/mackbookpankaj/Documents/GitHub/AutomationFrameworkWithFluent/AutomationFrameworkWithFluent/bin/Debug/netcoreapp3.1/MimeTypesMap.dll

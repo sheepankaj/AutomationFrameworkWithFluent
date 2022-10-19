@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using AutomationFrameworkWithFluent.Framework.Common;
 using OpenQA.Selenium;
 
@@ -43,16 +44,58 @@ namespace AutomationFrameworkWithFluent.Framework.POM
             return new HomePage(TryTo);
         }
 
+        /// <summary>
+        /// Click Search button
+        /// </summary>
+        /// <returns></returns>
         public HomePage ClickSearchButton()
         {
             TryTo.Click(SearchButton);
 
             return new HomePage(TryTo);
         }
-
+        /// <summary>
+        /// Validate the search text
+        /// </summary>
+        /// <returns></returns>
         public HomePage ValidateSearchText()
         {
             TryTo.VerifyElementTextIsCorrect(SearchTextValidation, "FADED SHORT SLEEVE T-SHIRTS");
+
+            return new HomePage(TryTo);
+        }
+
+        /// <summary>
+        /// Click the Women menu and validate after it
+        /// </summary>
+        /// <returns></returns>
+        public HomePage ClickWomenMenu()
+        {
+            TryTo.Click(By.XPath("//*[@id='block_top_menu']/ul/li[1]/a"));
+            TryTo.VerifyElementTextIsCorrect(By.XPath("//*[@id='center_column']/h1/span[1]"), "WOMEN");
+
+            return new HomePage(TryTo);
+        }
+
+        /// <summary>
+        /// Select values from the drop down list at sort by button
+        /// </summary>
+        /// <returns></returns>
+        public HomePage ClickSortByButtonAndSelectValueFromDrodDown()
+        {
+            List<string> sortbyDropDownlistValue = new List<string>
+            {
+                "Price: Lowest first",
+                "Price: Highest first",
+                "Product Name: A to Z",
+                "Product Name: A to Z",
+                "In stock",
+                "Reference: Lowest first",
+                "Reference: Highest first"
+            };
+
+            TryTo.WaitForElementToBeVisible(By.Id("productsSortForm"));
+            TryTo.LoopSelectFromDropDownList(By.XPath("//*[@id='selectProductSort']"),sortbyDropDownlistValue);
 
             return new HomePage(TryTo);
         }
